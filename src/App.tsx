@@ -110,7 +110,6 @@ export default function Component() {
                 <td className="border border-blue-200 px-4 py-2">{formatCurrency(item.quantity * item.rate)}</td>
               </tr>
             ))}
-            {/* Add empty rows for potential additional items */}
             {[...Array(2)].map((_, index) => (
               <tr key={`empty-${index}`} className="border border-blue-200">
                 <td className="border border-blue-200 px-4 py-2"></td>
@@ -121,10 +120,10 @@ export default function Component() {
               </tr>
             ))}
             <tr className="border border-blue-200 bg-blue-50">
-              <td colSpan={4} className="border border-blue-200 px-4 py-2 text-right font-medium text-blue-800">
+              <td colSpan={4}  className="border font-[700] border-blue-200 px-4 py-2 text-right text-blue-800">
                 Subtotal
               </td>
-              <td className="border border-blue-200 px-4 py-2 text-blue-800">{formatCurrency(subtotal)}</td>
+              <td className="border border-blue-200 px-4 py-2 font-[700] text-blue-800">{formatCurrency(subtotal)}</td>
             </tr>
             <tr className="border border-blue-200 bg-blue-100">
               <td colSpan={4} className="border border-blue-200 px-4 py-2 text-right font-bold text-blue-800">
@@ -143,7 +142,7 @@ export default function Component() {
         </div>
         <div>
           <span className="font-medium">NB: Tax Payer ID Number </span>
-          <span>({invoiceData.taxPayerId})</span>
+          <span className="font-[700]">({invoiceData.taxPayerId})</span>
         </div>
       </div>
     </div>
